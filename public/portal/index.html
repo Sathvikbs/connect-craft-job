@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JobConnect – Connecting Talent With Opportunities</title>
+  <meta name="description" content="Discover thousands of jobs from top companies. Build a modern resume, apply in one click, and land your dream role." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-tag">🚀 Join 25,000+ professionals</span>
+          <h1>Find your next role at a <span>company you'll love</span></h1>
+          <p class="hero-lead">Search 500+ jobs from top companies, build a beautiful resume, and apply in one click. JobConnect brings talent and opportunity together — instantly.</p>
+          <form class="hero-search" id="heroSearch">
+            <input id="heroQ" placeholder="Job title, keyword or company" aria-label="Search jobs" />
+            <input id="heroL" placeholder="City or remote" aria-label="Location" />
+            <button class="btn btn-primary" type="submit">🔍 Search</button>
+          </form>
+          <div class="flex gap-2 mt-3" style="flex-wrap:wrap;color:var(--text-muted);font-size:.88rem">
+            Popular:
+            <a href="jobs.html?q=React">React</a>
+            <a href="jobs.html?q=Python">Python</a>
+            <a href="jobs.html?q=Designer">Designer</a>
+            <a href="jobs.html?q=Data">Data</a>
+          </div>
+        </div>
+        <div class="hero-illust" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="rgba(255,255,255,.35)"/>
+                <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+            </defs>
+            <circle cx="120" cy="120" r="80" fill="url(#g)"/>
+            <rect x="60" y="220" width="280" height="140" rx="20" fill="url(#g)"/>
+            <rect x="90" y="250" width="220" height="14" rx="7" fill="rgba(255,255,255,.5)"/>
+            <rect x="90" y="278" width="160" height="10" rx="5" fill="rgba(255,255,255,.35)"/>
+            <rect x="90" y="298" width="180" height="10" rx="5" fill="rgba(255,255,255,.35)"/>
+            <rect x="90" y="322" width="120" height="24" rx="12" fill="rgba(255,255,255,.9)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="container">
+        <div class="stats">
+          <div class="stat"><div class="stat-num" data-count="jobs">0</div><div class="stat-lbl">Active jobs</div></div>
+          <div class="stat"><div class="stat-num" data-count="companies">0</div><div class="stat-lbl">Companies</div></div>
+          <div class="stat"><div class="stat-num" data-count="candidates">0</div><div class="stat-lbl">Candidates</div></div>
+          <div class="stat"><div class="stat-num" data-count="employers">0</div><div class="stat-lbl">Employers</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Browse by category</h2>
+          <p>Explore opportunities across trending domains</p>
+        </div>
+        <div class="cat-grid" id="catGrid"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED JOBS -->
+    <section class="section" style="background:var(--bg-soft)">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Featured jobs</h2>
+          <p>Hand-picked roles from companies actively hiring</p>
+        </div>
+        <div class="grid grid-3" id="featuredJobs"></div>
+        <div class="text-center mt-4"><a class="btn btn-outline" href="jobs.html">View all jobs →</a></div>
+      </div>
+    </section>
+
+    <!-- TOP COMPANIES -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Top companies hiring now</h2>
+          <p>Join teams building things people love</p>
+        </div>
+        <div class="grid grid-4" id="topCompanies"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" style="background:var(--bg-soft)">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Success stories</h2>
+          <p>Real people, real hires</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="testi reveal">
+            <q>JobConnect made my first job hunt feel effortless. I applied on Monday and joined my dream startup by Friday.</q>
+            <div class="testi-user"><div class="avatar">AS</div><div><b>Anaya Sharma</b><div style="font-size:.82rem;color:var(--text-muted)">Frontend Engineer · NovaTech Labs</div></div></div>
+          </div>
+          <div class="testi reveal">
+            <q>The resume builder alone is worth it. Clean, modern templates that hiring managers actually read.</q>
+            <div class="testi-user"><div class="avatar">RK</div><div><b>Rohit Kumar</b><div style="font-size:.82rem;color:var(--text-muted)">Data Analyst · Lumen Analytics</div></div></div>
+          </div>
+          <div class="testi reveal">
+            <q>As a recruiter I love how fast I can post a role and start reviewing candidates. Zero setup, delightful UI.</q>
+            <div class="testi-user"><div class="avatar">MP</div><div><b>Meera Patel</b><div style="font-size:.82rem;color:var(--text-muted)">Talent Partner · PeopleFirst HR</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Ready to make your next move?</h2>
+          <p>Create a free account, build your resume in minutes, and start applying to roles that match your skills.</p>
+          <a class="btn btn-lg" href="register.html">Get started — it's free</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

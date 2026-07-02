@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My profile · JobConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="page-head"><div class="container"><h1>My profile</h1><p>Keep your details fresh for better matches.</p></div></header>
+  <main class="container mb-5 mt-3">
+    <div class="grid" style="grid-template-columns:280px 1fr;gap:24px">
+      <div class="card text-center">
+        <img id="pfAvatar" src="https://api.dicebear.com/9.x/initials/svg?seed=U" alt="" style="width:120px;height:120px;border-radius:50%;margin:0 auto;object-fit:cover;background:var(--bg)">
+        <div class="mt-2 flex-col gap-1">
+          <button class="btn btn-ghost btn-sm" id="exportBtn">⬇ Export profile</button>
+          <button class="btn btn-ghost btn-sm" id="importBtn">⬆ Import profile</button>
+          <input type="file" id="importFile" accept=".json" hidden>
+        </div>
+      </div>
+      <form id="profileForm" class="panel">
+        <div class="grid grid-2">
+          <div class="form-group"><label>Full name</label><input name="name" class="form-control" required></div>
+          <div class="form-group"><label>Email</label><input name="email" class="form-control" disabled></div>
+          <div class="form-group"><label>Mobile</label><input name="mobile" class="form-control"></div>
+          <div class="form-group"><label>Location</label><input name="location" class="form-control" placeholder="City, Country"></div>
+          <div class="form-group" style="grid-column:1/-1"><label>About me</label><textarea name="about" rows="3" class="form-control"></textarea></div>
+          <div class="form-group" style="grid-column:1/-1"><label>Skills (comma separated)</label><input name="skills" class="form-control" placeholder="React, Node.js, SQL"></div>
+          <div class="form-group"><label>Upload photo</label><input type="file" name="photo" accept="image/*" class="form-control"></div>
+        </div>
+        <button class="btn btn-primary mt-2">Save profile</button>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/candidate.js"></script>
+</body>
+</html>

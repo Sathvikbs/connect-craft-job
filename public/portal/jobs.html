@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Browse jobs · JobConnect</title>
+  <meta name="description" content="Search, filter and apply for jobs across top companies.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="page-head">
+    <div class="container">
+      <h1>Find your next role</h1>
+      <p>Search across 500+ jobs from leading companies.</p>
+    </div>
+  </header>
+  <main class="container">
+    <div class="job-list-layout">
+      <aside class="filter-panel">
+        <div class="flex-between mb-2"><h3 style="margin:0">Filters</h3><button class="btn btn-sm btn-ghost" id="clearFilters">Clear</button></div>
+
+        <div class="filter-group">
+          <h4>Employment type</h4>
+          <label class="filter-opt"><input type="checkbox" data-group="type" value="Full Time"> Full Time</label>
+          <label class="filter-opt"><input type="checkbox" data-group="type" value="Part Time"> Part Time</label>
+          <label class="filter-opt"><input type="checkbox" data-group="type" value="Remote"> Remote</label>
+          <label class="filter-opt"><input type="checkbox" data-group="type" value="Hybrid"> Hybrid</label>
+          <label class="filter-opt"><input type="checkbox" data-group="type" value="Internship"> Internship</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Experience</h4>
+          <label class="filter-opt"><input type="checkbox" data-group="exp" value="Fresher"> Fresher</label>
+          <label class="filter-opt"><input type="checkbox" data-group="exp" value="1-2 Years"> 1 – 2 Years</label>
+          <label class="filter-opt"><input type="checkbox" data-group="exp" value="3-5 Years"> 3 – 5 Years</label>
+          <label class="filter-opt"><input type="checkbox" data-group="exp" value="5+ Years"> 5+ Years</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Salary</h4>
+          <label class="filter-opt"><input type="checkbox" data-group="salary" value="<3"> Under ₹3 LPA</label>
+          <label class="filter-opt"><input type="checkbox" data-group="salary" value="3-6"> ₹3 – 6 LPA</label>
+          <label class="filter-opt"><input type="checkbox" data-group="salary" value="6-10"> ₹6 – 10 LPA</label>
+          <label class="filter-opt"><input type="checkbox" data-group="salary" value=">10"> Above ₹10 LPA</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Software Development"> Software Development</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Web Development"> Web Development</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Data Science"> Data Science</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Machine Learning"> Machine Learning</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="UI/UX Design"> UI/UX Design</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Cyber Security"> Cyber Security</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Cloud Computing"> Cloud Computing</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="DevOps"> DevOps</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Mobile Development"> Mobile Development</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Networking"> Networking</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Marketing"> Marketing</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="Finance"> Finance</label>
+          <label class="filter-opt"><input type="checkbox" data-group="category" value="HR"> HR</label>
+        </div>
+      </aside>
+
+      <section>
+        <div class="jobs-toolbar">
+          <input type="search" id="searchInput" class="search-input" placeholder="Search title, company, or skill…">
+          <input type="search" id="locInput" class="search-input" placeholder="Location" style="max-width:200px">
+          <select class="sort-select" id="sortSelect">
+            <option value="latest">Latest</option>
+            <option value="salary">Highest salary</option>
+            <option value="popular">Most popular</option>
+          </select>
+        </div>
+        <p id="jobsCount" style="margin:0 0 16px;color:var(--text-muted)"></p>
+        <div class="grid grid-2" id="jobsGrid"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/jobs.js"></script>
+</body>
+</html>

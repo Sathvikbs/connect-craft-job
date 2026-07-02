@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Candidate dashboard · JobConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="page-head">
+    <div class="container"><h1>Candidate dashboard</h1><p>Your applications, saved jobs, and personalized recommendations.</p></div>
+  </header>
+  <main class="container" id="candDash">
+    <div class="dashboard-layout">
+      <aside class="dash-side">
+        <div class="u-info">
+          <div class="avatar">👤</div>
+          <div><div class="name">Candidate</div><div class="role">Job seeker</div></div>
+        </div>
+        <ul class="dash-menu">
+          <li><a class="active" href="candidate-dashboard.html">📊 Overview</a></li>
+          <li><a href="jobs.html">🔍 Browse jobs</a></li>
+          <li><a href="applications.html">📝 My applications</a></li>
+          <li><a href="saved-jobs.html">⭐ Saved jobs</a></li>
+          <li><a href="resume-builder.html">📄 Resume builder</a></li>
+          <li><a href="profile.html">👤 Profile</a></li>
+        </ul>
+      </aside>
+
+      <section>
+        <div class="stat-grid mb-3">
+          <div class="stat-card"><div class="ico">📝</div><div class="lbl">Applications</div><div class="val" id="kApplied">0</div><div class="delta">All time</div></div>
+          <div class="stat-card accent"><div class="ico">⭐</div><div class="lbl">Saved jobs</div><div class="val" id="kSaved">0</div><div class="delta">Bookmarked</div></div>
+          <div class="stat-card success"><div class="ico">👤</div><div class="lbl">Profile complete</div><div class="val" id="kProfile">0%</div><div class="delta">Keep it fresh</div></div>
+          <div class="stat-card info"><div class="ico">✨</div><div class="lbl">Matches</div><div class="val" id="kMatches">0</div><div class="delta">Based on skills</div></div>
+        </div>
+
+        <div class="panel mb-3">
+          <div class="panel-head"><h3>Profile completion</h3><a class="btn btn-sm btn-ghost" href="profile.html">Edit profile</a></div>
+          <div class="progress"><span id="profileBar"></span></div>
+          <p class="mt-2" id="profileTip" style="margin:0"></p>
+        </div>
+
+        <div class="grid grid-2 mb-3">
+          <div class="panel">
+            <div class="panel-head"><h3>Application status</h3></div>
+            <div class="chart-wrap"><canvas id="chartStatus"></canvas></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Applications last 6 weeks</h3></div>
+            <div class="chart-wrap"><canvas id="chartTrend"></canvas></div>
+          </div>
+        </div>
+
+        <div class="panel mb-3">
+          <div class="panel-head"><h3>Recommended for you</h3><a class="btn btn-sm btn-ghost" href="jobs.html">See all</a></div>
+          <div class="grid grid-3" id="recJobs"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Recently viewed</h3></div>
+          <div class="grid grid-2" id="recentJobs"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/candidate.js"></script>
+</body>
+</html>

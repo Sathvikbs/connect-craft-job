@@ -1,0 +1,164 @@
+/* Dashboards, jobs, resume builder */
+
+.page-head {
+  padding: 40px 0 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+.page-head h1 { margin-bottom: 4px; font-size: 2rem; }
+.page-head p { margin: 0; }
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+  padding: 30px 0;
+}
+.dash-side {
+  position: sticky; top: calc(var(--nav-h) + 20px);
+  align-self: start;
+  padding: 18px;
+  border-radius: var(--r-lg);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  height: fit-content;
+}
+.dash-side .u-info { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+.dash-side .u-info .name { font-weight: 700; color: var(--text); }
+.dash-side .u-info .role { font-size: .78rem; color: var(--text-muted); }
+.dash-menu { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.dash-menu a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; border-radius: 10px;
+  color: var(--text); font-weight: 500;
+}
+.dash-menu a:hover, .dash-menu a.active { background: color-mix(in oklab, var(--primary) 10%, transparent); color: var(--primary); }
+
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.stat-card {
+  padding: 22px;
+  border-radius: var(--r-lg);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.stat-card .lbl { color: var(--text-muted); font-size: .85rem; }
+.stat-card .val { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--text); margin-top: 4px; }
+.stat-card .delta { font-size: .8rem; margin-top: 6px; color: var(--success); font-weight: 600; }
+.stat-card .ico {
+  position: absolute; top: 18px; right: 18px;
+  width: 40px; height: 40px; border-radius: 12px;
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  color: var(--primary);
+  display: grid; place-items: center; font-size: 1.2rem;
+}
+.stat-card.accent .ico { background: color-mix(in oklab, var(--accent) 15%, transparent); color: var(--accent); }
+.stat-card.success .ico { background: color-mix(in oklab, var(--success) 15%, transparent); color: var(--success); }
+.stat-card.info .ico { background: color-mix(in oklab, var(--info) 15%, transparent); color: var(--info); }
+
+.panel { padding: 24px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--r-lg); }
+.panel h3 { margin-bottom: 16px; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
+
+/* Charts */
+.chart-wrap { position: relative; width: 100%; height: 260px; }
+
+/* Jobs page */
+.job-list-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  padding: 30px 0;
+}
+.filter-panel {
+  position: sticky; top: calc(var(--nav-h) + 20px);
+  align-self: start;
+  padding: 20px;
+  background: var(--bg-elev);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  max-height: calc(100vh - var(--nav-h) - 40px);
+  overflow-y: auto;
+}
+.filter-group { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.filter-group:last-child { border-bottom: none; }
+.filter-group h4 { font-size: .9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); }
+.filter-opt { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: .9rem; color: var(--text); cursor: pointer; }
+.filter-opt input { accent-color: var(--primary); }
+
+.jobs-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.search-input { flex: 1; min-width: 240px; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--bg-elev); color: var(--text); }
+.sort-select { padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-elev); color: var(--text); }
+
+/* Job details */
+.job-details-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; padding: 30px 0; }
+.job-hero-card { padding: 30px; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--bg-elev); }
+.job-hero-card .top { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+.job-hero-card .job-logo { width: 68px; height: 68px; font-size: 1.4rem; }
+.job-hero-card h1 { font-size: 1.8rem; margin: 0 0 4px; }
+.section-block { margin-top: 26px; }
+.section-block h3 { margin-bottom: 10px; }
+.section-block ul { padding-left: 20px; color: var(--text-muted); }
+.section-block li { margin-bottom: 6px; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; }
+tr:hover td { background: color-mix(in oklab, var(--primary) 4%, transparent); }
+
+/* Resume builder */
+.resume-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; padding: 30px 0;
+}
+.resume-form { padding: 24px; border-radius: var(--r-lg); background: var(--bg-elev); border: 1px solid var(--border); max-height: 82vh; overflow-y: auto; }
+.resume-preview { padding: 0; border-radius: var(--r-lg); background: white; border: 1px solid var(--border); overflow: hidden; max-height: 82vh; overflow-y: auto; box-shadow: var(--shadow-md); }
+.tmpl-picker { display: flex; gap: 8px; margin-bottom: 18px; }
+.tmpl-picker button { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent; font-weight: 600; }
+.tmpl-picker button.active { background: var(--grad-primary); color: #fff; border-color: transparent; }
+
+/* Resume templates (rendered inside preview) */
+.rz { color: #111; font-family: 'Inter', system-ui, sans-serif; }
+.rz-classic { padding: 32px; }
+.rz-classic .rz-name { font-family: 'Sora', serif; font-size: 2rem; text-align: center; margin: 0; }
+.rz-classic .rz-title { text-align: center; color: #555; margin-top: 4px; }
+.rz-classic .rz-contact { text-align: center; font-size: .85rem; color: #555; margin-top: 6px; }
+.rz-classic hr { margin: 16px 0; border: none; border-top: 2px solid #111; }
+.rz-classic h4 { text-transform: uppercase; letter-spacing: .12em; font-size: .9rem; margin: 18px 0 8px; color: #111; }
+.rz-classic .item { margin-bottom: 10px; }
+.rz-classic .item .head { display: flex; justify-content: space-between; font-weight: 600; font-size: .95rem; }
+.rz-classic .item .sub { color: #666; font-size: .85rem; }
+
+.rz-modern { display: grid; grid-template-columns: 220px 1fr; min-height: 100%; }
+.rz-modern aside { background: #0F172A; color: #fff; padding: 24px; }
+.rz-modern aside h4 { color: #F59E0B; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; margin: 18px 0 8px; }
+.rz-modern aside p, .rz-modern aside li { color: #cbd5e1; font-size: .85rem; }
+.rz-modern main { padding: 28px; }
+.rz-modern .rz-name { font-size: 2rem; margin: 0; color: #2563EB; }
+.rz-modern .rz-title { color: #555; margin-top: 4px; }
+.rz-modern h4 { text-transform: uppercase; letter-spacing: .1em; color: #2563EB; font-size: .9rem; margin: 20px 0 8px; }
+.rz-modern .item { margin-bottom: 12px; }
+
+.rz-minimal { padding: 40px; }
+.rz-minimal .rz-name { font-size: 2.4rem; margin: 0; font-weight: 800; }
+.rz-minimal .rz-title { color: #999; text-transform: uppercase; letter-spacing: .2em; font-size: .9rem; margin-top: 6px; }
+.rz-minimal h4 { font-size: .85rem; text-transform: uppercase; letter-spacing: .2em; color: #999; margin: 22px 0 10px; }
+.rz-minimal .item { margin-bottom: 14px; }
+
+.rz-avatar { width: 90px; height: 90px; border-radius: 50%; background: #cbd5e1; object-fit: cover; display: block; margin: 0 auto 12px; }
+
+/* Tag input pills */
+.tag-input {
+  border: 1px solid var(--border-strong); border-radius: 10px; padding: 8px; background: var(--bg);
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.tag-input .pill { padding: 3px 10px; background: var(--primary); color: #fff; border-radius: 999px; font-size: .8rem; display: inline-flex; gap: 6px; align-items: center; }
+.tag-input .pill button { color: #fff; }
+.tag-input input { flex: 1; min-width: 120px; border: none; outline: none; background: transparent; color: var(--text); padding: 4px; }
+
+/* Applied jobs / applications table status */
+.status-pending    { background: color-mix(in oklab, var(--warning) 15%, transparent); color: #B45309; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+.status-shortlisted{ background: color-mix(in oklab, var(--info) 15%, transparent); color: #0E7490; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+.status-rejected   { background: color-mix(in oklab, var(--danger) 15%, transparent); color: #B91C1C; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+.status-selected   { background: color-mix(in oklab, var(--success) 15%, transparent); color: #047857; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
