@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My applications · JobConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="page-head"><div class="container"><h1>My applications</h1><p>Track every application in one place.</p></div></header>
+  <main class="container mb-5 mt-3" id="appsWrap">
+    <div class="panel" style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Job</th><th>Location</th><th>Salary</th><th>Applied</th><th>Status</th></tr></thead>
+        <tbody id="appsBody"></tbody>
+      </table>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/jobs.js"></script>
+</body>
+</html>

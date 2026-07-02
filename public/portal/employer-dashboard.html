@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Employer dashboard · JobConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="page-head">
+    <div class="container flex-between" style="flex-wrap:wrap;gap:12px">
+      <div><h1>Employer dashboard</h1><p>Post roles, review applicants, and hire faster.</p></div>
+      <button class="btn btn-primary" id="newJobBtn">＋ Post new job</button>
+    </div>
+  </header>
+  <main class="container" id="empDash">
+    <div class="dashboard-layout">
+      <aside class="dash-side">
+        <div class="u-info">
+          <div class="avatar">🏢</div>
+          <div><div class="name">Employer</div><div class="role">Recruiter dashboard</div></div>
+        </div>
+        <ul class="dash-menu">
+          <li><a class="active" href="employer-dashboard.html">📊 Overview</a></li>
+          <li><a href="employer-dashboard.html">💼 My jobs</a></li>
+          <li><a href="employer-dashboard.html">👥 Applications</a></li>
+          <li><a href="profile.html">👤 Profile</a></li>
+          <li><a href="index.html">🌐 View site</a></li>
+        </ul>
+      </aside>
+
+      <section>
+        <div class="stat-grid mb-3">
+          <div class="stat-card"><div class="ico">💼</div><div class="lbl">Total jobs</div><div class="val" id="kJobs">0</div><div class="delta">All time</div></div>
+          <div class="stat-card success"><div class="ico">✅</div><div class="lbl">Active jobs</div><div class="val" id="kActive">0</div><div class="delta">Live now</div></div>
+          <div class="stat-card accent"><div class="ico">📥</div><div class="lbl">Applications</div><div class="val" id="kApps">0</div><div class="delta">Received</div></div>
+          <div class="stat-card info"><div class="ico">⭐</div><div class="lbl">Shortlisted</div><div class="val" id="kShort">0</div><div class="delta">Under review</div></div>
+        </div>
+
+        <div class="grid grid-2 mb-3">
+          <div class="panel">
+            <div class="panel-head"><h3>Applications per job</h3></div>
+            <div class="chart-wrap"><canvas id="chartApps"></canvas></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Application status</h3></div>
+            <div class="chart-wrap"><canvas id="chartStatus"></canvas></div>
+          </div>
+        </div>
+
+        <div class="panel mb-3">
+          <div class="panel-head"><h3>My jobs</h3></div>
+          <div style="overflow-x:auto">
+            <table><thead><tr><th>Title</th><th>Applicants</th><th>Views</th><th>Posted</th><th>Actions</th></tr></thead>
+              <tbody id="empJobsBody"></tbody></table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Recent applications</h3></div>
+          <div style="overflow-x:auto">
+            <table><thead><tr><th>Candidate</th><th>Job</th><th>Applied</th><th>Status</th><th></th></tr></thead>
+              <tbody id="recentAppsBody"></tbody></table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/candidate.js"></script>
+  <script type="module" src="js/employer.js"></script>
+</body>
+</html>

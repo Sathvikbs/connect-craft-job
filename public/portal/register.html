@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Create account · JobConnect</title>
+  <meta name="description" content="Create your free JobConnect account.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/auth.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="auth-wrap">
+    <aside class="auth-hero">
+      <div style="position:relative;z-index:1">
+        <h1>Start your journey</h1>
+        <p>Join thousands of candidates and employers building better careers together.</p>
+        <ul class="feature-list">
+          <li>Free forever — no credit card required</li>
+          <li>Beautiful resume builder</li>
+          <li>Smart, skill-based recommendations</li>
+          <li>Employer & candidate dashboards</li>
+        </ul>
+      </div>
+    </aside>
+    <section class="auth-panel">
+      <div class="auth-card">
+        <h2>Create account</h2>
+        <p class="lead">Three quick steps and you're in.</p>
+        <div class="step-nav"><div class="step"></div><div class="step"></div><div class="step"></div></div>
+        <form id="registerForm" novalidate>
+          <!-- Step 1: personal -->
+          <div class="reg-step">
+            <div class="form-group"><label>Full name</label><input class="form-control" name="name" required></div>
+            <div class="form-group"><label>Email</label><input class="form-control" type="email" name="email" required></div>
+            <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" required placeholder="10 digit mobile"></div>
+            <div class="text-center mt-3"><button type="button" class="btn btn-primary btn-block btn-next">Continue</button></div>
+          </div>
+          <!-- Step 2: password -->
+          <div class="reg-step hidden">
+            <div class="form-group">
+              <label>Password</label>
+              <div class="pw-wrap">
+                <input class="form-control" type="password" name="password" required>
+                <button type="button" class="pw-toggle" data-for="password">👁</button>
+              </div>
+              <div class="pw-meter" id="pwMeter"><span></span></div>
+              <div class="form-help">Use 8+ chars, mix upper/lower, numbers, symbols.</div>
+            </div>
+            <div class="form-group">
+              <label>Confirm password</label>
+              <div class="pw-wrap">
+                <input class="form-control" type="password" name="confirm" required>
+                <button type="button" class="pw-toggle" data-for="confirm">👁</button>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button type="button" class="btn btn-ghost btn-prev">Back</button>
+              <button type="button" class="btn btn-primary btn-next" style="flex:1">Continue</button>
+            </div>
+          </div>
+          <!-- Step 3: role + terms -->
+          <div class="reg-step hidden">
+            <div class="form-group">
+              <label>I am a</label>
+              <div class="role-picker">
+                <div><input type="radio" name="role" value="candidate" id="rC"><label for="rC"><span class="role-ico">👤</span>Candidate</label></div>
+                <div><input type="radio" name="role" value="employer" id="rE"><label for="rE"><span class="role-ico">🏢</span>Employer</label></div>
+              </div>
+            </div>
+            <div class="form-group"><label>Company (optional)</label><input class="form-control" name="company" placeholder="Only for employers"></div>
+            <label class="checkbox-line"><input type="checkbox" name="terms"> I agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a></label>
+            <div class="flex gap-2 mt-3">
+              <button type="button" class="btn btn-ghost btn-prev">Back</button>
+              <button class="btn btn-primary" style="flex:1">Create account</button>
+            </div>
+          </div>
+        </form>
+        <div class="auth-alt">Already have an account? <a href="login.html">Sign in</a></div>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
