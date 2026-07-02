@@ -1,0 +1,48 @@
+/* Responsive breakpoints for JobConnect */
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-illust { max-width: 420px; margin: 0 auto; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .dashboard-layout { grid-template-columns: 1fr !important; }
+  .dash-side { position: static !important; }
+}
+
+@media (max-width: 768px) {
+  :root { --nav-h: 60px; }
+  .section { padding: 56px 0; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .hero-search { grid-template-columns: 1fr; }
+  .hero-search input + input { border-left: none; border-top: 1px solid var(--border); }
+  .nav-links {
+    position: fixed; top: var(--nav-h); left: 0; right: 0;
+    background: var(--bg-elev); border-bottom: 1px solid var(--border);
+    flex-direction: column; align-items: stretch;
+    padding: 16px; gap: 4px;
+    transform: translateY(-120%); transition: transform .3s var(--ease);
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-links a { padding: 12px 14px; }
+  .nav-toggle { display: inline-flex; }
+  .hero { padding: 60px 0 40px; }
+  .cta { padding: 40px 24px; }
+  .job-list-layout { grid-template-columns: 1fr !important; }
+  .filter-panel { position: static !important; }
+  .job-details-grid { grid-template-columns: 1fr !important; }
+  .resume-layout { grid-template-columns: 1fr !important; }
+  .auth-card { padding: 30px 22px !important; }
+  .modal { padding: 22px; }
+  table { font-size: .85rem; }
+}
+
+@media (max-width: 480px) {
+  .stats { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  h1 { font-size: 2rem; }
+  .btn-lg { padding: 12px 20px; font-size: .95rem; }
+  .container { padding: 0 16px; }
+}

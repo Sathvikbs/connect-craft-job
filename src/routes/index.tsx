@@ -1,24 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Redirect,
+  head: () => ({
+    meta: [
+      { title: "JobConnect – Smart Online Job Portal" },
+      { name: "description", content: "Connecting Talent With Opportunities. Browse 500+ jobs from top companies." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Redirect() {
+  useEffect(() => {
+    window.location.replace("/portal/index.html");
+  }, []);
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div style={{ display: "flex", minHeight: "100vh", alignItems: "center", justifyContent: "center", fontFamily: "system-ui" }}>
+      <a href="/portal/index.html" style={{ color: "#2563EB", textDecoration: "none", fontSize: 18 }}>
+        Loading JobConnect… click here if not redirected
+      </a>
     </div>
   );
 }
