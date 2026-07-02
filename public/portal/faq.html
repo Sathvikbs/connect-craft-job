@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FAQ · JobConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css">
+  <style>
+    details { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; transition: all .3s ease; }
+    details[open] { border-color: var(--primary); box-shadow: var(--shadow-md); }
+    summary { font-weight: 600; cursor: pointer; padding: 4px 0; color: var(--text); font-size: 1.05rem; }
+    details p { margin-top: 10px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <header class="page-head"><div class="container"><h1>Frequently asked questions</h1><p>Everything you need to know about JobConnect.</p></div></header>
+  <main class="container section" style="max-width:800px">
+    <details open><summary>Is JobConnect free to use?</summary><p>Yes! JobConnect is completely free for both candidates and employers as part of this mini project.</p></details>
+    <details><summary>How do I apply for a job?</summary><p>Sign in as a candidate, open any job and click "Apply now". You can attach a resume, portfolio link, and cover letter.</p></details>
+    <details><summary>Can employers post multiple jobs?</summary><p>Absolutely — from the employer dashboard, click "Post new job" any number of times.</p></details>
+    <details><summary>Where is my data stored?</summary><p>Everything is stored locally in your browser using LocalStorage. Nothing leaves your device.</p></details>
+    <details><summary>How do I reset the demo data?</summary><p>Press <kbd>Shift + Alt + R</kbd> anywhere on the site to reseed all users, jobs and applications.</p></details>
+    <details><summary>Can I export my profile?</summary><p>Yes — from the Profile page, click "Export profile" to download a JSON backup you can re-import anytime.</p></details>
+    <details><summary>Does the resume builder support printing?</summary><p>Yes. Open the resume builder and click "Print" or "Download" to save an HTML file you can print to PDF.</p></details>
+    <details><summary>Is there a dark mode?</summary><p>Yes — click the 🌙 icon in the top nav. Your preference is remembered.</p></details>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
