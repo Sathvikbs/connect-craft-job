@@ -118,6 +118,40 @@ export function initRegister() {
     Users.add(user);
     Session.set(user);
     Notifications.push(user.id, 'Welcome to JobConnect! Complete your profile to get better matches.', 'info');
+
+    // For candidates: seed a few sample applications + saved jobs so the
+    // dashboard, applications, and saved-jobs pages have data immediately.
+    if (user.role === 'candidate') {
+      const jobs = Jobs.all();
+      if (jobs.length) {
+        const pick = (n) => {
+          const set = new Set();
+          while (set.size < Math.min(n, jobs.length)) set.add(Math.floor(Math.random() * jobs.length));
+          return [...set].map(i => jobs[i]);
+        };
+        const sampleApps = pick(3);
+        const statuses = ['pending', 'shortlisted', 'pending'];
+        sampleApps.forEach((j, i) => {
+          Applications.add({
+            id: 'app_' + Date.now() + '_' + i,
+            jobId: j.id,
+            candidateId: user.id,
+            candidateName: user.name,
+            candidateEmail: user.email,
+            resume: '',
+            coverLetter: 'Excited to apply for this opportunity.',
+            portfolio: '',
+            status: statuses[i] || 'pending',
+            createdAt: Date.now() - (i + 1) * 86400000,
+            updatedAt: Date.now(),
+          });
+          Jobs.update(j.id, { applicants: (j.applicants || 0) + 1 });
+        });
+        pick(2).forEach(j => Saved.toggle(user.id, j.id));
+        Notifications.push(user.id, 'We added a few sample applications so you can explore your dashboard.', 'info');
+      }
+    }
+
     toast('Account created successfully', 'success');
     setTimeout(() => location.href = user.role === 'employer' ? 'employer-dashboard.html' : 'candidate-dashboard.html', 700);
   });
