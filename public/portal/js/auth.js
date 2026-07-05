@@ -2,7 +2,7 @@
    auth.js — login + multi-step register + password reset
    ========================================================= */
 
-import { Users, Session, Notifications } from './storage.js';
+import { Users, Session, Notifications, Jobs, Applications, Saved } from './storage.js';
 import { $, $$, uid, toast, isEmail, isMobile, passwordStrength } from './utils.js';
 
 /* ---------------- Login ---------------- */
