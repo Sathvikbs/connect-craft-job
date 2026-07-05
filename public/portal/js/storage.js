@@ -136,7 +136,12 @@ export const Ratings = {
 
 /* ---------------- Seed / Reset ---------------- */
 export function ensureSeed() {
-  if (localStorage.getItem(KEYS.seeded) === '1' && Jobs.all().length > 0) return;
+  // Re-seed whenever core tables are missing/empty — protects users who
+  // cleared storage or opened the site in a fresh browser.
+  if (Jobs.all().length > 0 && Users.all().length > 0) {
+    localStorage.setItem(KEYS.seeded, '1');
+    return;
+  }
   seedDemo();
   localStorage.setItem(KEYS.seeded, '1');
 }
